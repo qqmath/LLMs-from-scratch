@@ -9,7 +9,7 @@ if version_parse(platform.python_version()) < version_parse('3.9'):
     print('[FAIL] We recommend Python 3.9 or newer but'
           ' found version %s' % (sys.version))
 else:
-    print('[OK] Your Python version is %s' % (platform.python_version()))
+    print(f'[OK] Your Python version is {platform.python_version()}')
 
 
 def get_packages(pkgs):
