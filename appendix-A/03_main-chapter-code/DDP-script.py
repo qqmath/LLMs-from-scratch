@@ -65,8 +65,7 @@ class NeuralNetwork(torch.nn.Module):
         )
 
     def forward(self, x):
-        logits = self.layers(x)
-        return logits
+        return self.layers(x)
 
 
 def prepare_dataset():
@@ -150,7 +149,7 @@ def compute_accuracy(model, dataloader, device):
     correct = 0.0
     total_examples = 0
 
-    for idx, (features, labels) in enumerate(dataloader):
+    for features, labels in dataloader:
         features, labels = features.to(device), labels.to(device)
 
         with torch.no_grad():
